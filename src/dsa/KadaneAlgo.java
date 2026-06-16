@@ -8,17 +8,9 @@ public class KadaneAlgo {
 
         int sum = arr[0];
         int best = arr[0];
-        for(int i = 1;i<n;i++){
-            if(arr[i] > sum && sum <= 0){
-                sum = arr[i];  // throw the items of bag
-                if(sum>best){
-                    best = arr[i];
-                }
-            }
-            else {
-                best = Math.max(best, arr[i] + sum);
-                sum = sum + arr[i];
-            }
+        for(int i =1;i<n;i++){
+            sum = Integer.max(arr[i],sum +  arr[i]);
+            best = Integer.max(sum,best);
         }
         System.out.println(best);
     }
