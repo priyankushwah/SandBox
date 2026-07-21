@@ -4,6 +4,9 @@ out/
 !**/src/test/**/out/
 .kotlin
 
+### Application Logs ###
+app.log
+
 ### Eclipse ###
 .apt_generated
 .classpath
