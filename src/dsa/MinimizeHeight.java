@@ -4,21 +4,18 @@ import java.util.Arrays;
 
 public class MinimizeHeight {
     public static void main(String[] args) {
-        int[] arr = new int[]{1,8,10,6,4,6,9,1};
+        int[] arr = new int[]{1,2,4,5,6,10,12};
         int k = 7;
-        for(int i = 0;i< arr.length; i++){
-
-            if(arr[i]<=k){
-                System.out.println("value: " + arr[i] + " Modify: "+(arr[i]+k));
-                arr[i] = arr[i]+k;
-            }
-            else {
-                System.out.println("value: " + arr[i] + " Modify: "+(arr[i]-k));
-                arr[i] = arr[i]-k;
-            }
-        }
         Arrays.sort(arr);
-        System.out.println("Minimized height difference: " + (arr[arr.length-1] - arr[0]));
+        int n = arr.length;
+        int ans = arr[n-1]-arr[0];
+        for(int i = 1;i<n;i++){
+            int min = Math.min(arr[0]+k,arr[i]-k);
+            int max = Math.max(arr[n-1]-k,arr[i-1]+k);
+            ans = Math.min(ans,max-min);
+        }
+
+        System.out.println(ans);
 
     }
 }
