@@ -10,8 +10,8 @@ public class MergeTwoArrays {
 
     public static void main(String[] args){
         log.warning("Starting MergeTwoArrays program");
-        int[] arr1 = {1, 3, 5, 7, 0, 0, 0, 0, 0};
-        int[] arr2 = {0, 2, 6, 8, 9};
+        int[] arr1 = {1,3,4,0,0,0};
+        int[] arr2 = {1,2,4};
         int n = arr2.length;
         int m = arr1.length-n;
         log.info("Initial arrays: arr1 = " + java.util.Arrays.toString(arr1) + ", arr2 = " + java.util.Arrays.toString(arr2));
